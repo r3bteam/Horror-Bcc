@@ -80,7 +80,7 @@ if (message.content.startsWith(adminprefix + 'st')) {
     var prefix = "!";
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+  if(!message.member.hasPermission('MANAGE_GUILD')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
     let copy = "Horror -Bc";
     let request = `Requested By ${message.author.username}`;
@@ -123,7 +123,7 @@ if (message.content.startsWith(adminprefix + 'st')) {
       if(message.author.bot) return;
      
       if(message.content.startsWith(prefix + "rolebc")) {
-        if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+        if (!message.member.hasPermission("MANAGE_GUILD"))  return;
         let args = message.content.split(" ").slice(1);
      
         if(!args[0]) {
@@ -172,7 +172,7 @@ if (message.content.startsWith(adminprefix + 'st')) {
 client.on('message', message => {
     if (message.content.split(' ')[0] == '!allbc')
        message.guild.members.forEach( member => {
-         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+         if (!message.member.hasPermission("MANAGE_GUILD"))  return;
  
  
            member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
