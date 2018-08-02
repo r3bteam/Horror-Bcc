@@ -182,11 +182,11 @@ client.on('message', message => {
              
                                                   });
    client.on("message", message => {
-       var prefix = "*^%";
+       var prefix = "!";
   
              var args = message.content.substring(prefix.length).split(" ");
-                if (message.content.startsWith(prefix + "ظظظظظ")) {
-                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+                if (message.content.startsWith(prefix + "allbc")) {
+                          if (!message.member.hasPermission("MANAGE_GUILD"))  return;
  
                           if (!args[1]) {
                              
