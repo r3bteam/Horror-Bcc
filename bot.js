@@ -3,6 +3,11 @@ const client = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
 
+client.on('ready', async () => {
+    console.log('I am ready!');
+
+    client.user.setPresence({ game: { name: 'Horror Magasin', type: 2 } });
+});
 
 client.on("message", async message => {
 
